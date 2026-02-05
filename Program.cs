@@ -14,28 +14,7 @@ namespace TicTacToe
 {
   class Program
   {
-    static void Step(string side, Board myBoard)
-    {
-      string inputstr = "";
-      int input = 0;
-      Console.WriteLine($"{side} to move:");
-      inputstr = Console.ReadLine();
-
-      while (myBoard.CheckValidInput(inputstr, side) != "true")
-      {
-        Console.WriteLine(myBoard.CheckValidInput(inputstr, side));
-        myBoard.Print();
-        Console.WriteLine($"{side} to move:");
-        inputstr = Console.ReadLine();
-      }
-
-      myBoard.Print();
-
-      if (myBoard.CheckWin(side) != "")  // if game is complete
-      {
-        Console.WriteLine(myBoard.CheckWin(side));
-      }
-    }
+    
     static void Main(string[] args)
     {
       string inputstr = "";
@@ -48,9 +27,9 @@ namespace TicTacToe
       {
         input = Convert.ToInt32(inputstr);
       }
-      while (Regex.IsMatch(inputstr, @"^\d+$") == false || inputstr == "")
+      while (input < 2 || inputstr == "")
       {
-        Console.WriteLine("Please input an integer.");
+        Console.WriteLine("Please input a positive integer of at least 2.");
         Console.WriteLine("Please input your desired board size:");
         inputstr = Console.ReadLine();
         if (Regex.IsMatch(inputstr, @"^\d+$") == true && inputstr != "")
@@ -66,11 +45,11 @@ namespace TicTacToe
 
       while (myBoard.Result == "")
       {
-        Step("X", myBoard);
+        myBoard.Step("X");
 
         if (myBoard.Result == "")
         {
-          Step("O", myBoard);
+          myBoard.Step("O");
         }
       }
     }

@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "nBv2mrkJaRGAFLRMiIs+i0yzOwmznMupqXEivPZKzW4=",
-  "Source": "TicTacToa",
-  "BasePath": "_content/TicTacToa",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"nBv2mrkJaRGAFLRMiIs+i0yzOwmznMupqXEivPZKzW4=","Source":"TicTacToa","BasePath":"_content/TicTacToa","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

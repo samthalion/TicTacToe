@@ -45,6 +45,28 @@ class Board
     }
   }
 
+  public void Step(string side)
+    {
+      string inputstr = "";
+      Console.WriteLine($"{side} to move:");
+      inputstr = Console.ReadLine();
+
+      while (CheckValidInput(inputstr, side) != "true")
+      {
+        Console.WriteLine(CheckValidInput(inputstr, side));
+        Print();
+        Console.WriteLine($"{side} to move:");
+        inputstr = Console.ReadLine();
+      }
+
+      Print();
+
+      if (CheckWin(side) != "")  // if game is complete
+      {
+        Console.WriteLine(CheckWin(side));
+      }
+    }
+
   public bool Set(int x, string side)
   {
     for (int i = 0; i < size; i++)  // iterate through rows
